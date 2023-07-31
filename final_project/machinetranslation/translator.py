@@ -1,14 +1,18 @@
+"""
+Helper module to translate text
+"""
 from deep_translator import MyMemoryTranslator
 
-def englishToFrench(englishText):
-    if type(englishText) != str:
+# Function that translates english to french
+def english_to_french(english_text):
+    if isinstance(english_text, str) is False:
         raise ValueError('The value provided is not a string')
-    frenchText = MyMemoryTranslator(source='en-GB', target='fr-FR').translate(englishText)
-    return frenchText
+    french_text = MyMemoryTranslator(source='en-GB', target='fr-FR').translate(english_text)
+    return french_text
 
-
-def frenchToEnglish(frenchText):
-    if type(frenchText) != str:
+# Function that translates french to english
+def french_to_english(french_text):
+    if isinstance(french_text, str) is False:
         raise ValueError('The value provided is not a string')
-    englishText = MyMemoryTranslator(source='fr-FR', target='en-GB').translate(frenchText)
-    return englishText
+    english_text = MyMemoryTranslator(source='fr-FR', target='en-GB').translate(french_text)
+    return english_text
